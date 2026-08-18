@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#3E8BFF" />
+  <title>AI Ops — AI workflows running on nullplatform</title>
+  <meta name="description" content="Five AI workflows built on nullplatform that analyze every deploy, track every dollar, document every service, and gate every release — running in production today." />
+  <meta property="og:title" content="AI Ops — AI workflows running on nullplatform" />
+  <meta property="og:description" content="Deploy analysis, dependency intelligence, cost optimization, self-writing documentation and smart approval checklists — running in production today." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://np-founders.github.io/ai-ops/" />
+  <meta property="og:image" content="https://np-founders.github.io/ai-ops/assets/deploy-summaries.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0F17'/%3E%3Cpath d='M12 24 L20 8' stroke='%233E8BFF' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-null">null</span><span class="brand-slash">/</span><span class="brand-rest">ai&nbsp;ops</span>
+    </a>
+    <nav class="nav-links" aria-label="Workflows">
+      <a href="#deployments">Deployments</a>
+      <a href="#libraries">Libraries</a>
+      <a href="#costs">Costs</a>
+      <a href="#selfdoc">Self-Documenter</a>
+      <a href="#checklists">Checklists</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-site" href="https://www.nullplatform.com" target="_blank" rel="noopener">nullplatform.com</a>
+      <a class="btn btn-primary" href="https://www.nullplatform.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-pill"><span class="pill-dot"></span>AI workflows &middot; running on nullplatform &middot; in production</p>
+      <h1>Your platform,<br /><span class="accent">on watch.</span></h1>
+      <p class="hero-sub">Five AI workflows that analyze every deploy, track every dollar, document every service, and gate every release — automatically, on nullplatform.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://www.nullplatform.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+        <a class="btn btn-ghost btn-lg" href="#deployments">See the workflows</a>
+      </div>
+      <ul class="hero-chips" aria-label="The five workflows">
+        <li><a href="#deployments">Deployments Analyzer</a></li>
+        <li><a href="#libraries">Library Analyzer</a></li>
+        <li><a href="#costs">Cost Intelligence</a></li>
+        <li><a href="#selfdoc">Self-Documenter</a></li>
+        <li><a href="#checklists">Smart Checklists</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ DEPLOYMENTS ANALYZER ============ -->
+  <section class="band band-light" id="deployments">
+    <div class="container">
+      <div class="band-head reveal">
+        <p class="eyebrow">Deployments Analyzer</p>
+        <h2>Every deploy, <mark>explained</mark></h2>
+        <p class="lede">The moment a release reaches production, it gets analyzed: the full change set since the previous deploy, an AI-written summary of what actually shipped, and a risk score with its rationale.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <h3>Know what shipped, who shipped it, and how risky it was</h3>
+          <ul class="checks">
+            <li>Full diff between deploys: PRs, commits, contributors and files changed</li>
+            <li>Risk scoring — low / medium / high — with a written rationale per release</li>
+            <li>Functional summaries per deploy, per app, per namespace, plus weekly rollups</li>
+            <li>All metadata lands in the lake, ready to query</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-summaries.png" alt="Deploy Summaries panel showing weekly highlights, risk breakdown and per-deploy functional summaries" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="feature-row row-flip reveal">
+        <div class="feature-text">
+          <p class="eyebrow">Engineering insights</p>
+          <h3>From deploy data to team pulse</h3>
+          <p>Because every deploy is analyzed, the numbers your team argues about are already there: who ships, who reviews, who unblocks whom, and how long code takes to reach production.</p>
+          <ul class="checks">
+            <li>Contribution &amp; collaboration: PRs authored, reviews and approvals per person</li>
+            <li>Change categories per deploy: feature, bugfix, security, infra, refactor&hellip;</li>
+            <li>Lead time from first commit to production, review time, merge-to-prod</li>
+            <li>AI-assisted PR share — measure how much of your delivery is agent-driven</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-participation.png" alt="Deploy Participation and Collaboration dashboard with team pulse metrics and change categories" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="shot-grid reveal">
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-leadtime.png" alt="Lead time dashboard: median lead time, review time and merge-to-prod per PR" loading="lazy" />
+        </figure>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-table.png" alt="Per-deploy table with risk, approval mode, AI share and functional summary" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIBRARY ANALYZER ============ -->
+  <section class="band band-fog" id="libraries">
+    <div class="container">
+      <div class="band-head reveal">
+        <p class="eyebrow">Library Analyzer</p>
+        <h2>&ldquo;Who uses this?&rdquo; <mark>answered in seconds</mark></h2>
+        <p class="lede">Every release records its full dependency tree — internal libraries especially. When a security incident lands or a breaking change is coming, you know exactly which apps, versions and namespaces are affected.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <h3>Adoption, drift and blast radius per library</h3>
+          <ul class="checks">
+            <li>Adoption per library: which apps use it, on which version, in which namespace</li>
+            <li>Version drift: how many distinct versions coexist across applications</li>
+            <li>Criticality computed from how far behind each app is: latest, intermediate, critical</li>
+            <li>Internal vs external split across the whole dependency surface</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/library-adoption.png" alt="Library adoption charts: top 20 libraries by adoption, internal vs external split and version drift" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="shot-wide reveal">
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/library-drill.png" alt="Per-library drill-down: apps using it, adoption percentage, apps on critical versions and declared versions" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COST INTELLIGENCE ============ -->
+  <section class="band band-light" id="costs">
+    <div class="container">
+      <div class="band-head reveal">
+        <p class="eyebrow">Cost Intelligence</p>
+        <h2>Costs, waste, and <mark>what to do about them</mark></h2>
+        <p class="lede">Cost tracking per application, scope and namespace — real usage versus waste, down to blended millicore-hour pricing. And it doesn&rsquo;t stop at dashboards: right-sizing agents open action items with estimated savings and full rationale.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <h3>From breakdowns to action items</h3>
+          <ul class="checks">
+            <li>30-day cost breakdowns by account, namespace and application</li>
+            <li>Real usage vs waste per day, with an org-level efficiency score</li>
+            <li>Provisioning state per scope: over-provisioned, optimal, under-provisioned</li>
+            <li>Auto-generated right-sizing action items with estimated monthly savings</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/cost-daily.png" alt="Daily cost dashboard: org cost, real usage, waste, efficiency, identified savings and temporal evolution" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="feature-row row-flip reveal">
+        <div class="feature-text">
+          <p class="eyebrow">Right-sizing agents</p>
+          <h3>Savings with a rationale, not just a number</h3>
+          <p>Each opportunity arrives as an action item: current requests vs actual fleet usage, the recommended request, estimated monthly savings, confidence, and the risk signals that were checked before recommending anything.</p>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/cost-rightsizing.png" alt="Right-sizing action item: save 173 USD/month on Parameters API with full AI analysis and risk signals" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="shot-wide reveal">
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/cost-breakdown.png" alt="Cost breakdown by entity: 30-day cost per account, namespace and application, and provisioning state" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELF-DOCUMENTER (dark) ============ -->
+  <section class="band band-dark" id="selfdoc">
+    <div class="container">
+      <div class="band-head reveal">
+        <p class="eyebrow">Self-Documenter <span class="badge-exp">Experimental</span></p>
+        <h2 class="on-dark">Documentation that <mark class="mark-blue">writes itself</mark></h2>
+        <p class="lede on-dark">An evolution of the Deployments Analyzer: it reads every application and its relationships and builds a living catalog — internal docs, dependency maps, and infrastructure detected outside the platform. Humans stay in the loop: your team&rsquo;s knowledge feeds back into every scan, making it more precise each time.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div class="feature-text on-dark">
+          <h3>A catalog your team didn&rsquo;t have to write</h3>
+          <ul class="checks checks-dark">
+            <li>Auto-built component catalog: overview, architecture, data, security, risks per component</li>
+            <li>Relationship maps: APIs consumed, internal libraries, services and scopes</li>
+            <li>Flags potential infrastructure living outside nullplatform</li>
+            <li>Human-in-the-loop curation: observed, joined, AI-inferred and refuted facts are labeled</li>
+          </ul>
+        </div>
+        <figure class="shot-frame shot-dark">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/selfdoc-component.png" alt="Auto-generated component page for action-items-api with docs, facets and relations" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="shot-grid reveal">
+        <figure class="shot-frame shot-dark">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/selfdoc-catalog.png" alt="Self-built catalog: 100 components with AI-generated descriptions" loading="lazy" />
+        </figure>
+        <figure class="shot-frame shot-dark">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/selfdoc-graph.png" alt="Interactive dependency graph of components, libraries and services" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SMART CHECKLISTS ============ -->
+  <section class="band band-light" id="checklists">
+    <div class="container">
+      <div class="band-head reveal">
+        <p class="eyebrow">Smart Checklists</p>
+        <h2>Approvals that <mark>check themselves</mark></h2>
+        <p class="lede">The new approvals mode: build checklists that integrate with Jira, request peer validations, and run automatic checks — with AI and against external services — before anything reaches production.</p>
+      </div>
+
+      <div class="feature-row reveal">
+        <div class="feature-text">
+          <h3>Risk decides who approves</h3>
+          <ul class="checks">
+            <li>Change analysis &amp; risk matrix: the accumulated diff decides what the release needs</li>
+            <li>Pair approval required only when risk demands it — fastpath when it doesn&rsquo;t</li>
+            <li>Automatic validations with AI and against external services</li>
+            <li>Every decision, override and rationale in the audit trail</li>
+          </ul>
+        </div>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/checklist-pipeline.png" alt="Smart checklist run: change analysis and risk matrix, human pair approval and admin approval steps" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="band band-dark closing">
+    <div class="container reveal">
+      <h2 class="on-dark">Want this running <mark class="mark-blue">on your stack?</mark></h2>
+      <p class="lede on-dark">These workflows aren&rsquo;t a roadmap — they run today on nullplatform, analyzing our own production. Everything they produce is queryable from the lake and actionable through governance.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://www.nullplatform.com/contact-us" target="_blank" rel="noopener">Book a demo</a>
+        <a class="btn btn-ghost btn-lg" href="https://www.nullplatform.com" target="_blank" rel="noopener">Visit nullplatform.com</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="#top"><span class="brand-null">null</span><span class="brand-slash">/</span><span class="brand-rest">ai&nbsp;ops</span></a>
+    <p>Built by the nullplatform team &middot; <a href="https://www.nullplatform.com" target="_blank" rel="noopener">nullplatform.com</a> &middot; <a href="https://github.com/nullplatform" target="_blank" rel="noopener">GitHub</a></p>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(el => io.observe(el));
+  } else {
+    items.forEach(el => el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
