@@ -77,9 +77,10 @@ a { color: inherit; }
     radial-gradient(600px 380px at 82% 28%, rgba(62, 139, 255, 0.10), transparent 60%),
     var(--dark);
   color: #fff;
-  padding: 108px 24px 96px;
+  padding: 84px 24px 72px;
   text-align: center;
 }
+.hero h1.hero-compact { font-size: clamp(40px, 5.5vw, 58px); }
 .hero-inner { max-width: 900px; margin: 0 auto; }
 .hero-pill {
   display: inline-flex; align-items: center; gap: 8px;
@@ -104,7 +105,7 @@ a { color: inherit; }
 }
 .hero-actions { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero-chips {
-  list-style: none; margin-top: 56px;
+  list-style: none; margin-top: 40px;
   display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
 }
 .hero-chips a {
