@@ -207,7 +207,13 @@ h2 .mark-blue, h2 mark.mark-blue { background: var(--blue); color: #fff; }
   background: #F7F9FB; border-bottom: 1px solid var(--line);
 }
 .shot-bar i { width: 9px; height: 9px; border-radius: 50%; background: #D9DFE7; }
+.shot-frame img { cursor: zoom-in; }
+.shot-frame figcaption {
+  font-size: 13.5px; color: var(--body);
+  padding: 12px 16px; border-top: 1px solid var(--line); background: #FBFCFD;
+}
 .shot-dark { background: #0E1320; border-color: rgba(255, 255, 255, 0.10); }
+.shot-dark figcaption { background: #131926; border-color: rgba(255,255,255,0.08); color: rgba(255,255,255,0.55); }
 .shot-dark .shot-bar { background: #131926; border-color: rgba(255, 255, 255, 0.08); }
 .shot-dark .shot-bar i { background: rgba(255, 255, 255, 0.18); }
 .band-dark .shot-frame { box-shadow: 0 24px 56px -18px rgba(0, 0, 0, 0.65); }
@@ -215,7 +221,9 @@ h2 .mark-blue, h2 mark.mark-blue { background: var(--blue); color: #fff; }
 .shot-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 56px;
 }
-.shot-grid .shot-frame img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.shot-grid .shot-frame { display: flex; flex-direction: column; }
+.shot-grid .shot-frame img { width: 100%; flex: 1; min-height: 0; object-fit: cover; object-position: top; }
+.shot-grid .shot-frame figcaption { margin-top: auto; }
 .shot-wide { margin-top: 56px; }
 .shot-wide .shot-frame { max-width: 980px; margin: 0 auto; }
 
@@ -233,6 +241,22 @@ h2 .mark-blue, h2 mark.mark-blue { background: var(--blue); color: #fff; }
 .footer p { color: rgba(255, 255, 255, 0.45); font-size: 13.5px; }
 .footer a { color: rgba(255, 255, 255, 0.65); text-decoration: none; }
 .footer a:hover { color: #fff; }
+
+/* ---------- lightbox ---------- */
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(6, 9, 14, 0.94);
+  display: none; overflow: auto; padding: 28px;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  margin: auto; display: block;
+  max-width: min(94vw, 1680px); max-height: 90vh;
+  border-radius: 8px; cursor: zoom-in;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+.lightbox img.zoom { max-width: none; max-height: none; cursor: zoom-out; }
 
 /* ---------- reveal ---------- */
 

@@ -80,6 +80,19 @@
         </figure>
       </div>
 
+      <div class="shot-grid reveal">
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-context-catalog.png" alt="Application catalog with the Deploy Summaries panel: weekly highlights and the functional summary of the last week of production deploys" loading="lazy" />
+          <figcaption>Summaries live in the application catalog&hellip;</figcaption>
+        </figure>
+        <figure class="shot-frame">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/deploy-context-scope.png" alt="Scope dashboard showing production metrics, open action items and the Deploy Summaries panel side by side" loading="lazy" />
+          <figcaption>&hellip;and in each scope&rsquo;s dashboard, next to metrics and action items.</figcaption>
+        </figure>
+      </div>
+
       <div class="feature-row row-flip reveal">
         <div class="feature-text">
           <p class="eyebrow">Engineering insights</p>
@@ -265,7 +278,22 @@
   </div>
 </footer>
 
+<div class="lightbox" role="dialog" aria-label="Enlarged screenshot"><img alt="" /></div>
+
 <script>
+  const lb = document.querySelector('.lightbox');
+  const lbImg = lb.querySelector('img');
+  const lbClose = () => { lb.classList.remove('open'); lbImg.classList.remove('zoom'); document.body.style.overflow = ''; };
+  document.querySelectorAll('.shot-frame img').forEach(img => {
+    img.addEventListener('click', () => {
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    });
+  });
+  lb.addEventListener('click', e => { if (e.target !== lbImg) lbClose(); });
+  lbImg.addEventListener('click', () => lbImg.classList.toggle('zoom'));
+  addEventListener('keydown', e => { if (e.key === 'Escape') lbClose(); });
+
   const items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const io = new IntersectionObserver((entries) => {
