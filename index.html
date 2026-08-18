@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0F17'/%3E%3Cpath d='M12 24 L20 8' stroke='%233E8BFF' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -261,16 +261,57 @@
       <div class="feature-row reveal">
         <div class="feature-text on-dark">
           <h3>A catalog your team didn&rsquo;t have to write</h3>
+          <p class="on-dark-body">Every component gets a page: an AI-written overview, generated docs (architecture, data, errors, security, risks&hellip;) and 20+ typed facets — auth, dependencies, coverage, IAM, events, capabilities — each one labeled with where it came from.</p>
           <ul class="checks checks-dark">
-            <li>Auto-built component catalog: overview, architecture, data, security, risks per component</li>
-            <li>Relationship maps: APIs consumed, internal libraries, services and scopes</li>
+            <li>Docs and facets per component, plus relationship maps: APIs consumed, internal libraries, services and scopes</li>
             <li>Flags potential infrastructure living outside nullplatform</li>
-            <li>Human-in-the-loop curation: observed, joined, AI-inferred and refuted facts are labeled</li>
+            <li>Every fact carries a provenance badge: <em>observed</em> from code, <em>joined</em> from live systems, <em>AI-inferred</em>, <em>computed</em> — or <em>refuted</em></li>
           </ul>
         </div>
         <figure class="shot-frame shot-dark">
           <div class="shot-bar"><i></i><i></i><i></i></div>
-          <img src="assets/selfdoc-component.png" alt="Auto-generated component page for action-items-api with docs, facets and relations" loading="lazy" />
+          <img src="assets/selfdoc-component-facets.png" alt="Component page for Core Entities API: 23 typed facets, each with a provenance badge like observed:code, joined or IA:deep" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="extract-block reveal">
+        <div class="extract-head extract-head-dark">
+          <h3>Facts, not prose</h3>
+          <p>Docs written by hand go stale; this catalog stores typed facts that can be re-derived. Each fact says who produced it, from which commit, and pointing at what evidence.</p>
+        </div>
+        <div class="extract-grid">
+          <pre class="code-card" aria-label="Facet example with provenance"><code><span class="c"># one facet of core-entities-api</span>
+<span class="k">facet</span>: <span class="v">api-dependencies</span>
+<span class="k">provenance</span>:
+  <span class="k">kind</span>: <span class="hl">joined</span>          <span class="c"># observed | joined | IA | computed</span>
+  <span class="k">producer</span>: <span class="v">catalog-extractor@local-agent</span>
+  <span class="k">commit</span>: <span class="v">03e984ec&hellip;</span>  <span class="k">commit_date</span>: <span class="v">2026-08-12</span>
+<span class="k">config_derived</span>:
+  - <span class="k">env_var</span>: <span class="v">NRN_BASE_URL</span>
+    <span class="k">target_component</span>: <span class="v">nrn-api</span>
+    <span class="k">evidence</span>: <span class="v">infrastructure/dependency_injection.js:786</span>
+  - <span class="k">env_var</span>: <span class="v">PARAMS_API_URL</span>
+    <span class="k">target_component</span>: <span class="v">parameters-api</span>
+    <span class="k">evidence</span>: <span class="v">infrastructure/dependency_injection.js:632</span></code></pre>
+          <dl class="extract-list extract-list-dark">
+            <div><dt>provenance</dt><dd>Who says so, and why believe it: observed from code, joined from live systems, AI-inferred, computed — or refuted by a human.</dd></div>
+            <div><dt>evidence</dt><dd>Facts point to the exact file and line they were derived from. Re-run the extractor, get the same answer.</dd></div>
+            <div><dt>freshness</dt><dd>Facts age with the code: each one is tied to a commit, so a stale fact is visible — never silent.</dd></div>
+            <div><dt>human in the loop</dt><dd>People never overwrite an observation — they refute or assert alongside it, and the catalog gets sharper with every scan.</dd></div>
+            <div><dt>agent-first</dt><dd>The retrieval unit is the typed facet, provenance included, so an AI agent can weigh how much to trust each fact it reads.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="feature-row row-flip reveal">
+        <div class="feature-text on-dark">
+          <p class="eyebrow">Ask the catalog</p>
+          <h3>One search box over everything</h3>
+          <p class="on-dark-body">Full-text search across every component, facet and generated doc. &ldquo;cognito auth&rdquo; returns the components that use it, the facet that observed it, and the file where the evidence lives — one click from the source.</p>
+        </div>
+        <figure class="shot-frame shot-dark">
+          <div class="shot-bar"><i></i><i></i><i></i></div>
+          <img src="assets/selfdoc-search.png" alt="Catalog search: querying 'cognito auth' returns matching components, facets and docs with evidence references" loading="lazy" />
         </figure>
       </div>
 
@@ -278,10 +319,12 @@
         <figure class="shot-frame shot-dark">
           <div class="shot-bar"><i></i><i></i><i></i></div>
           <img src="assets/selfdoc-catalog.png" alt="Self-built catalog: 100 components with AI-generated descriptions" loading="lazy" />
+          <figcaption>180 components, 1000+ edges — nobody wrote a single page.</figcaption>
         </figure>
         <figure class="shot-frame shot-dark">
           <div class="shot-bar"><i></i><i></i><i></i></div>
-          <img src="assets/selfdoc-graph.png" alt="Interactive dependency graph of components, libraries and services" loading="lazy" />
+          <img src="assets/selfdoc-map.png" alt="Dependency map of 180 apps: edges by mechanism, node size by references, ring by criticality" loading="lazy" />
+          <figcaption>The dependency map, computed from observed facts — not from a diagram someone drew.</figcaption>
         </figure>
       </div>
     </div>

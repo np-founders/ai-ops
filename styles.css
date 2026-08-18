@@ -231,6 +231,14 @@ h2 .mark-blue, h2 mark.mark-blue { background: var(--blue); color: #fff; }
 }
 .extract-list dd { color: #454F5B; font-size: 14.5px; line-height: 1.5; }
 
+.extract-head-dark h3 { color: #fff; }
+.extract-head-dark p { color: rgba(255, 255, 255, 0.62); }
+.extract-list-dark dd { color: rgba(255, 255, 255, 0.72); }
+.band-dark .code-card { border-color: rgba(255, 255, 255, 0.12); box-shadow: 0 24px 56px -18px rgba(0, 0, 0, 0.65); }
+.on-dark-body { color: rgba(255, 255, 255, 0.62); }
+.feature-text .on-dark-body { color: rgba(255, 255, 255, 0.62); }
+.checks-dark li em { font-style: normal; font-family: var(--mono); font-size: 0.88em; color: #7FB3FF; }
+
 /* ---------- screenshot frames ---------- */
 
 .shot-frame {
