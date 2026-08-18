@@ -84,6 +84,47 @@
         </figure>
       </div>
 
+      <div class="extract-block reveal">
+        <div class="extract-head">
+          <h3>Everything extracted, per deployment</h3>
+          <p>Real metadata from one of our production deploys — attached to the deployment itself, queryable via API, CLI (<code>np deployment read</code>) or straight from the lake.</p>
+        </div>
+        <div class="extract-grid">
+          <pre class="code-card" aria-label="Deployment metadata example"><code><span class="c"># np deployment read --id 1031224706</span>
+<span class="k">metadata</span>:
+  <span class="k">change</span>:
+    <span class="k">application_name</span>: <span class="v">Approvals API</span>
+    <span class="k">from_release</span>: <span class="v">0.52.0</span>  <span class="k">to_release</span>: <span class="v">0.52.1</span>
+    <span class="k">prs</span>:
+      - <span class="k">number</span>: <span class="v">278</span>
+        <span class="k">title</span>: <span class="v">"fix(checklist): replay the stored callback&hellip;"</span>
+        <span class="k">author</span>: <span class="v">rqbazan</span>
+        <span class="k">size</span>: <span class="v">{ additions: 319, deletions: 46, files: 2 }</span>
+        <span class="k">ai</span>: <span class="v">{ used: true, level: full }</span>
+    <span class="k">participants</span>:
+      - <span class="v">{ github: rqbazan, roles: [author, reviewer] }</span>
+      - <span class="v">{ github: francocirulli95, roles: [reviewer, approver] }</span>
+    <span class="k">change_categories</span>: <span class="v">[ bugfix ]</span>
+    <span class="k">signals</span>:
+      <span class="k">sensitive_paths</span>: <span class="v">{ auth: false, db_migrations: false, &hellip; }</span>
+    <span class="k">risk</span>: <span class="hl">medium</span>
+    <span class="k">risk_rationale</span>: <span class="v">"Bugfix to the checklist cascade
+      outcome path&hellip; it governs whether cascaded approvals
+      let deployments proceed or get denied."</span>
+    <span class="k">short_summary</span>: <span class="v">"Cascaded approval outcomes now
+      replay the stored callback instead of forcing a
+      synthesized status."</span></code></pre>
+          <dl class="extract-list">
+            <div><dt>change</dt><dd>The full change set: PRs with descriptions and per-file line counts, commits, and the exact release range the deploy covers.</dd></div>
+            <div><dt>participants</dt><dd>Everyone involved and their roles — author, reviewers, approvers — mapped from the PRs behind the deploy.</dd></div>
+            <div><dt>ai_usage</dt><dd>How much of the change was AI-assisted: PRs, commits, and the level of assistance.</dd></div>
+            <div><dt>change_categories</dt><dd>Each change classified — feature, bugfix, security, infra, refactor — with notes on what it touches.</dd></div>
+            <div><dt>risk + signals</dt><dd>A risk score with a written rationale, plus sensitive-path checks: auth, DB migrations, dependencies, infra.</dd></div>
+            <div><dt>summary</dt><dd>A one-line summary plus a functional, operator-facing write-up of what actually changes in production.</dd></div>
+          </dl>
+        </div>
+      </div>
+
       <div class="shot-grid reveal">
         <figure class="shot-frame">
           <div class="shot-bar"><i></i><i></i><i></i></div>
